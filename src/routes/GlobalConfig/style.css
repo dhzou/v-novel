@@ -1,0 +1,9 @@
+
+.table{
+    background: white;
+}
+.ant-table-pagination.ant-pagination{
+    display: none;
+
+}
+

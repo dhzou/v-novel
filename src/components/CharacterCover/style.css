@@ -1,0 +1,20 @@
+
+.character-cover{
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    height: 310px;
+    width: 220px;
+    padding: 10px;
+    background: white;
+    margin: 5px;
+}
+.character-cover-img{
+    width: 196px;
+    height: 208px;
+
+}
+.character-cover-p{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
