@@ -3,31 +3,29 @@
 
 
 
-//
-// 1.opt(i) = opt(i-2) + arr[i]
-//          = opt(i-1)
 
-var arr =[1,1,4,2,9];
-function maxsum(i) {
-    if (i === 0) return arr[0];
-    if (i === 1) return   arr[0] > arr[1]?arr[0]:arr[1];
-    const  a = maxsum(i-2) + arr[i]
-    const  b = maxsum(i-1);
-    return a > b ? a:b;
-
-
-}
-
-function maxsum() {
-    if(arr.length === 0) return arr[0];
-    if (arr.length === 1) return arr[0] > arr[1]?arr[0]:arr[1];
-    const opt = [arr[0],arr[1]];
-    for (let i = 2; i <= arr.length; i++) {
-        const  a = opt[i-2] + arr[i]
-        const  b = opt[i-1];
-        opt[i] = a > b ? a:b;
+function max () {
+  const opt = [];
+  for (let j = 0 ; j < 5;j++) {
+    var child = [];
+    for (let i = 0 ; i < 33 ; i ++) {
+      child.push(0);
     }
-    return opt.pop();
-}
+    opt.push(child);
+  }
 
-console.log(maxsum());
+  const v = [50,220,60,110];
+  const w   = [5 , 20 , 10 , 12];
+  var targer = 32;
+  for( let i = 1; i <= w.length; i++) {
+    for( let j = 1; j<= targer; j++){
+      if(j<w[i])
+        opt[i][j] = opt[i-1][j];
+      else{
+        opt[i][j] = Math.max(opt[i-1][j] , opt[i-1][j-w[i]] + v[i]);
+      }
+    }
+  }
+  return opt[3][32];
+}
+console.log(max());
